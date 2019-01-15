@@ -6,55 +6,45 @@ namespace HelloWorldSpring19
     {
         static void Main(string[] args)
         {
+            string strName;
+            string strTip = "Yes";
+            int intTipPercent;
+            float fTotal; //floats are for num with decimal points
+            float fTip;
+            bool bTip = true; //hot and cold, yes and no, in and out, up and down 
             
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("");
-            MessinRound();
-            
-        }
-        static void MessinRound()
-        {
-            //Variable Declaration
-            double dblTipPercent;
-            double dblTotal;
-            double dblTip;
 
-            Console.WriteLine("");
-            Console.WriteLine("******** Tip Calculator ********");
-            Console.WriteLine("");
+            Console.WriteLine("What is your name?");
+            strName = Console.ReadLine(); //Retrieve input from console
 
-            //Determine bill total
-            Console.WriteLine("How much was the total bill?");
-            dblTotal = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Hello, " + strName + "!");
 
-            Console.WriteLine("How much would you like to tip? 15, 18, or 20 percent?");
-            dblTipPercent = Convert.ToDouble(Console.ReadLine());
-            dblTipPercent = dblTipPercent / 100;
-
-            switch (dblTipPercent)
+            if (strName.Equals("Alex")) //comparing two strings
             {
-                case 0.15:
-                    dblTip = 15;
-                    break;
-                case 0.18:
-                    dblTip = 18;
-                    break;
-                case 0.20:
-                    dblTip = 20;
-                    break;
-                default:
-                    dblTip = 15;
-                    break;
+                Console.WriteLine("The creators name is "+ strName.ToUpper() +", too!"); //convert string to uppercase
             }
 
-            //Do maths
-            dblTipPercent = dblTipPercent / 100;
-            dblTip = dblTotal * dblTipPercent;
+            Console.WriteLine("Welcome to Tip Calculator!");
 
-            //print tip amount
-            Console.WriteLine("Tip: " + dblTip);
+            Console.WriteLine("To start things off, would you like to leave a tip?");
+            strTip = Console.ReadLine();
+
+        
+            if(strTip.StartsWith("Y"))
+            {
+                Console.WriteLine("Great! Let's get started.");
+              
+            } else
+            {
+                bTip = false;
+            }
+
+            Console.WriteLine("How much was your total bill?");
+
             
 
+
+           
         }
     }
 }
